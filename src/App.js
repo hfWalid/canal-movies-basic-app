@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Suspense } from 'react';
+import {Route, Router, Switch} from "react-router-dom";
+
+import Urls from "./common/constants/urls";
+import history from "./utils/history";
+
+import MoviesList from "./pages/MoviesList";
+import {Header} from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router history={history}>
+        <Suspense>
+          <Header />
+          <Switch>
+            <Route
+                exact
+                path={Urls.movies}
+                component={props => <MoviesList {...props} />}
+            />
+          </Switch>
+        </Suspense>
+      </Router>
   );
 }
 
