@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders movies list feature renders movies list feature 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;

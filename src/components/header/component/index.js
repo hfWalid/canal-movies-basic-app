@@ -7,23 +7,8 @@ import {
   HeaderWrapper,
   IconContainer,
 } from "../style/default";
-import {useHistory} from "react-router-dom";
 
-type User = {
-  firstName: string,
-  lastName: string
-};
-
-type Props = {
-  user: User,
-  onLogin: Function,
-  onLogout: Function,
-  onCreateAccount: Function
-};
-
-const Header = ({ user, onLogin, onLogout, onCreateAccount }: Props) => {
-
-  const history = useHistory();
+const Header = () => {
   return (
       <Container>
         <HeaderWrapper>
@@ -49,13 +34,6 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: Props) => {
         </HeaderWrapper>
       </Container>
   );
-}
-
-Header.defaultProps = {
-  user: null,
-  onLogin: () => null,
-  onLogout: () => null,
-  onCreateAccount: () => null
 }
 
 export default Header;

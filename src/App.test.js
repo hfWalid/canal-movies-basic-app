@@ -1,8 +1,25 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { cleanup, render } from 'react-testing-library';
 import App from './App';
+import configureStore from './store';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+afterEach(cleanup);
+
+describe('renders app entry', () => {
+  let store;
+
+  beforeAll(() => {
+    store = configureStore({});
+  });
+
+  test('renders app entry', async () => {
+    const { asFragment } = render(
+        <Provider store={store}>
+          <App />
+        </Provider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
+

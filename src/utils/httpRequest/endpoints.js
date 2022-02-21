@@ -1,4 +1,4 @@
 export const Endpoints = {
-    moviesList: (page, size) => `/agent/?page=${page}&size=${size}`,
+    moviesList: (page, size) => `/movies/?page=${page}&size=${size}`,
 
 }
