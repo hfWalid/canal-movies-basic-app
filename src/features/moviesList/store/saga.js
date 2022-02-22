@@ -8,14 +8,14 @@ import { setMoviesList } from './action';
 import { actionTypes } from './constants';
 
 export function* getMovies(action): Saga<void> {
-    const { page, size } = action.payload;
+    const { page } = action.payload;
     try {
         const response: ApiResponse = yield call(
             request,
-            Endpoints.moviesList(page, size),
+            Endpoints.moviesList(page),
             HTTP_METHOD.GET,
         );
-        yield put(setMoviesList(response.content));
+        yield put(setMoviesList(response));
     } catch (error) {
         // TODO: error management
         // eslint-disable-next-line no-console

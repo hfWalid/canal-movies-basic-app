@@ -5,8 +5,7 @@ import { moviesListMock } from '../../utils/mocks';
 describe('client MoviesList action', () => {
   test('should return a request MoviesList action', () => {
     const pagination = {
-      page: 0,
-      size: 10
+      page: 0
     };
     const expectedResult = {
       payload: pagination,

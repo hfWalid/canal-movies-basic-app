@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.div `
 export const IconContainer = styled.div`
   max-width: 20%;
   display: flex;
-  flex-display: row;
+  cursor: pointer;
   justify-content: start;
 `;
 
