@@ -3,7 +3,7 @@ import { cleanup, render } from 'react-testing-library';
 import Header from "../index";
 
 jest.mock('react-router-dom', () => ({
-    useLocation: () => ({
+    useHistory: () => ({
         push: jest.fn(),
     }),
 }));

@@ -2,6 +2,15 @@
 
 exports[`renders movies list feature renders movies list feature 1`] = `
 <DocumentFragment>
-  <div />
+  <div
+    class="sc-bdvvtL QzUTY"
+  >
+    <div
+      class="sc-gsDKAQ JPWeZ"
+    />
+    <div
+      class="sc-dkPtRN fbvjfo"
+    />
+  </div>
 </DocumentFragment>
 `;

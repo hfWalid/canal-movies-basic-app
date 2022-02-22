@@ -1,5 +1,6 @@
 import { createSelector } from "reselect";
 import {reducerConstants} from "./constants";
+import {__formatMovies} from "../utils/helpers";
 
 const selectMoviesApiResponse = (state) => state.get('movies');
 
@@ -10,7 +11,8 @@ const makeSelectMoviesList = createSelector(selectMoviesApiResponse, (response) 
 const makeSelectMoviesResult = createSelector(
     makeSelectMoviesList,
     (result) =>
-        result ? {movies: result.results} : undefined,
+        result && result.results ? __formatMovies(result.results)
+        : undefined,
 );
 
 const makeSelectMoviesOtherResult = createSelector(
