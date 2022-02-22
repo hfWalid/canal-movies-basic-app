@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
-import { makeSelectMoviesList } from '../selector';
-import { moviesListMock } from "../../utils/mocks";
+import {makeSelectMoviesList, makeSelectMoviesOtherResult} from '../selector';
+import {apiOtherResults, moviesListMock} from "../../utils/mocks";
 
 describe('MoviesList Selectors', () => {
   let state;
@@ -8,11 +8,20 @@ describe('MoviesList Selectors', () => {
   beforeAll(() => {
     state = fromJS({
       movies: {
-        moviesList: moviesListMock,
-      },
+        moviesList: {
+          ...moviesListMock,
+          ...apiOtherResults
+        }
+      }
     });
   });
   test('should return MoviesList', () => {
-    expect(makeSelectMoviesList(state)).toEqual(moviesListMock);
+    expect(makeSelectMoviesList(state)).toEqual({
+      ...moviesListMock,
+      ...apiOtherResults
+    });
   });
+  test('should return other characteristics of api response: page, totalPages and totalResults', () => {
+    expect(makeSelectMoviesOtherResult(state)).toEqual(apiOtherResults);
+  })
 });

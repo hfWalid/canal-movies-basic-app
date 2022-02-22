@@ -11,7 +11,7 @@ import { setMoviesList } from '../action';
 describe('MoviesList sagas', () => {
   test('should call request MoviesList saga', async () => {
     const pagination = {
-      page: 0
+      page: 1
     };
     const response = {
       status: 200,
@@ -34,7 +34,7 @@ describe('MoviesList sagas', () => {
     );
 
     expect(requestMoviesSaga.next(response).value).toEqual(
-      put(setMoviesList(response.content)),
+      put(setMoviesList(response)),
     );
 
     expect(requestMoviesSaga.next().done).toBeTruthy();
