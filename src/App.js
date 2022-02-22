@@ -5,8 +5,9 @@ import {Route, Router, Switch} from "react-router-dom";
 import Urls from "./common/constants/urls";
 import history from "./utils/history";
 
-import MoviesList from "./pages/MoviesList";
+import MoviesListPage from "./pages/MoviesList";
 import {Header} from "./components";
+import DisplayPage from "./pages/Display";
 
 function App() {
   return (
@@ -17,7 +18,12 @@ function App() {
             <Route
                 exact
                 path={Urls.movies}
-                component={props => <MoviesList {...props} />}
+                component={props => <MoviesListPage {...props} />}
+            />
+            <Route
+                  exact
+                  path={Urls.display}
+                  component={props => <DisplayPage {...props} />}
             />
           </Switch>
         </Suspense>

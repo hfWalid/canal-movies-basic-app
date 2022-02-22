@@ -1,9 +1,10 @@
 import type {URLS} from "../types/constantsType";
 
-const contextPath = '/';
+const contextPath = '/movies';
 
 const Urls: URLS = {
-    movies: `${contextPath}movies`,
+    movies: `${contextPath}`,
+    display: `${contextPath}/movie`,
 };
 
 export default Urls;

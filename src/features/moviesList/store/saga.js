@@ -27,4 +27,6 @@ function* getMoviesSaga(): Saga<void> {
     yield takeLatest(actionTypes.GET_MOVIES_LIST, getMovies);
 }
 
-export default [getMoviesSaga];
+const sagas = [getMoviesSaga];
+
+export default sagas;
