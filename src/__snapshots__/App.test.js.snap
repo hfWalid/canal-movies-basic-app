@@ -3,16 +3,16 @@
 exports[`renders app entry renders app entry 1`] = `
 <DocumentFragment>
   <header
-    class="sc-eCImPb hHaaCo"
+    class="sc-jRQBWg guCGcn"
   >
     <div
-      class="sc-jRQBWg envkxn"
+      class="sc-gKclnd grFFXh"
     >
       <div
-        class="sc-gKclnd hzUTiG"
+        class="sc-iCfMLu bylMmr"
       >
         <svg
-          class="sc-iCfMLu dTXkMj"
+          class="sc-furwcr ioKaps"
           height="32"
           viewBox="0 0 32 32"
           width="32"
@@ -37,7 +37,7 @@ exports[`renders app entry renders app entry 1`] = `
           </g>
         </svg>
         <h1
-          class="sc-furwcr ckZwzJ"
+          class="sc-pVTFL iECpQq"
         >
           Canal+ Movies
         </h1>

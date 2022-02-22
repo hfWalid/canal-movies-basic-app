@@ -3,7 +3,7 @@ export const moviesListMock = [
         adult: false,
         backdrop_path: "/aTSA5zMWlVFTYBIZxTCMbLkfOtb.jpg",
         genre_ids: [27],
-        id: 632727,
+        id: 1,
         media_type: "movie",
         original_language: "en",
         original_title: "Texas Chainsaw Massacre",

@@ -1,14 +1,11 @@
 import React from 'react';
 import { cleanup, render } from 'react-testing-library';
-import MoviesList, {onClickRow} from "../index";
 import {Provider} from "react-redux";
 import configureStore from "../../../../store";
+import Display from "../index";
 
 jest.mock('react-router-dom', () => ({
     useLocation: () => ({
-        push: jest.fn(),
-    }),
-    useHistory: () => ({
         push: jest.fn(),
     }),
 }));
@@ -16,20 +13,18 @@ jest.mock('react-router-dom', () => ({
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
 
-describe('renders movies list feature', () => {
+describe('renders a single movie feature: display', () => {
     let store;
-
     beforeAll(() => {
         store = configureStore({});
     });
 
-    test('renders movies list feature', async () => {
+    test('renders display', async () => {
         const { asFragment } = render(
             <Provider store={store} >
-                <MoviesList />
+                <Display />
             </Provider>
         );
-        expect(asFragment()).toBeTruthy()
         expect(asFragment()).toMatchSnapshot();
     });
 });
